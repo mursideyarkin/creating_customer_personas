@@ -5,8 +5,8 @@
 # Importing users ve purchases data sets:
 
 import pandas as pd
-users = pd.read_csv("2nd_week/lectures/users.csv")
-purchases = pd.read_csv("2nd_week/lectures/purchases.csv")
+users = pd.read_csv("users.csv")
+purchases = pd.read_csv("purchases.csv")
 
 # Merging data sets on "uid" column:
 
@@ -29,7 +29,8 @@ my_labels = ['0_18', '19_23', '24_30', '31_40', '41_' + str(df_agg["age"].max())
 
 df_agg["age_cat"] = pd.cut(df_agg["age"], bins, labels=my_labels)
 
-# Dividing customers according to their demographic characteristics (age, gender, country etc.) and adding the data set as "customer_level_based".
+# Dividing customers according to their demographic characteristics (age, gender, country etc.)
+# and adding as a new variable "customer_level_based" into the data set.
 
 # For example:
 # USA_AND_M_0_18 --> country: USA, Android user, male, between 0-18 years old.
